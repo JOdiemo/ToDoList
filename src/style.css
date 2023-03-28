@@ -43,7 +43,6 @@ h4 {
 .clear {
   display: flex;
   justify-content: center;
-  width: 100wh;
   height: 40px;
   padding-top: 10px;
   background-color: lightgrey;
