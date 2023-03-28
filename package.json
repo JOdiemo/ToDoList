@@ -610,7 +610,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
-    "hint": "^2.0.0",
+    "hint": "^7.1.6",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "style-loader": "^3.3.2",
@@ -630,5 +630,6 @@
   "bugs": {
     "url": "https://github.com/JOdiemo/webpack-todo-list/issues"
   },
-  "homepage": "https://github.com/JOdiemo/webpack-todo-list#readme"
+  "homepage": "https://github.com/JOdiemo/webpack-todo-list#readme",
+  "main": "webpack.config.js"
 }
