@@ -1,4 +1,4 @@
-const render = (todosList) => {
+const thingsTodo = (todosList) => {
   const sortedItems = todosList.list.sort((a, b) => a.index - b.index);
   const itemsContainer = document.querySelector('.todos');
   let todosHtml = '';
@@ -45,4 +45,4 @@ const render = (todosList) => {
   });
 };
 
-export default render;
+export default thingsTodo;
