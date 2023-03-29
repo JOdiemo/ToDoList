@@ -1,9 +1,9 @@
 import './style.css';
-import render from './applications.js';
+import thingsTodo from './applications.js';
 import Todos from './todolist.js';
 
 const todosList = new Todos();
-render(todosList);
+thingsTodo(todosList);
 
 // add todo
 const addBtn = document.querySelector('.add-btn');
@@ -18,6 +18,13 @@ addBtn.addEventListener('click', () => {
   };
   if (description) {
     todosList.addItems(newTodo);
-    render(todosList);
+    thingsTodo(todosList);
   }
+});
+
+// clear all completed todos
+const clearBtn = document.querySelector('.clear-btn');
+clearBtn.addEventListener('click', () => {
+  todosList.clearCompletedTodos();
+  thingsTodo(todosList);
 });
