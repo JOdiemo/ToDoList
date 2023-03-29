@@ -1,20 +1,23 @@
 import './style.css';
+import render from './applications.js';
+import Todos from './todolist.js';
 
-const todosList = [
-  { description: 'wash the dishes', completed: false, index: 1 },
-  { description: 'complete To Do List project', completed: false, index: 2 },
-];
-
-const render = (list) => {
-  const sortedTodos = list.sort((a, b) => a.index - b.index);
-  const listContainer = document.querySelector('.todos');
-  let listHtml = '';
-  sortedTodos.forEach((todo) => {
-    listHtml += ` <div class="item">
-        <input type="checkbox" /><span> ${todo.description}</span>
-    </div>`;
-  });
-  listContainer.innerHTML = listHtml;
-};
-
+const todosList = new Todos();
 render(todosList);
+
+// add todo
+const addBtn = document.querySelector('.add-btn');
+addBtn.addEventListener('click', () => {
+  const id = `id${Math.random().toString(10).slice(2, 4)}`;
+  const description = document.querySelector('.description').value.trim();
+  const completed = false;
+  const index = todosList.list.length + 1;
+
+  const newTodo = {
+    id, description, completed, index,
+  };
+  if (description) {
+    todosList.addItems(newTodo);
+    render(todosList);
+  }
+});
